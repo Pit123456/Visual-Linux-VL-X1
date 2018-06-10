@@ -1,0 +1,55 @@
+                        ===== Division of busybox commands into categories ====
+                            Based on: https://busybox.net/downloads/BusyBox.html
+
+
+*Workspace*
+
+clear chvt deallocvt dumpkmap getty kbd_mode loadfont loadkmap lpd lpq lpr mesg microcom openvt reset resize run-parts setconsole setfont setkeycodes setlogcons stty tty ttysize vlock
+
+*Files & Folders*
+
+ar awk basename blkid bunzip2 bzcat bzip2 cat catv 
+ catv cd chattr cksum cmp comm cp cpio cut dd df diff 
+dirname dos2unix du expand fdflush fdformat fdisk find findfs  flash_lock flash_unlock fold 
+fold freeramdisk fsck fsync grep gunzip gzip hd hdparm head hexdump hostid hostname inotifyd install less ln ls lsattr lzmacat lzop lzopcat makemime md5sum mkdir mkdosfs mkfs.minix 
+mkfs.vfat mktemp more mount mountpoint mt mv od patch pivot_root rm rmdir 
+ pwd raidautorun rdev readlink realpath reformime sed sha1sum sha256sum sha512sum showkey
+ sort split stat strings sum sync tac tail tar tee touch tr uncompress unexpand uniq unix2dos 
+ unlzma unlzop unzip uptime  uudecode uuencode vi volname watchdog wc zcat 
+
+ *Processes*
+
+chroot chpst chrt envuidgid init ionice  kill killall nice renice runsv runsvdir
+killall5 nohup pgrep pidof pkill ps setsid setuidgid softlimit switch_root taskset time 
+timeout top
+
+
+*Pipe lines*
+| mkfifo
+*user management with file management*
+
+chown chgrp chmod fuser 
+
+*user management and security*
+
+addgroup, adduser chpasswd cryptpw deluser delgroup id last login logname mkpasswd passwd su sulogin who whoami
+
+
+
+*editing script*
+
+echo ed false env envdir expr false getopt length printenv printf script scriptreplay seq
+sleep test true usleep watch which xargs yes & && [ [[ ] ]]
+tools
+ 
+
+*system*
+
+acpid, arp, adjtimex, arping beep brctl cal chat crond crontab date dc devmem dhcprelay dmesg dnsd
+dpkg dumpleases eject fakeidentd fbset fbsplash free ftpd ftpget ftpput httpd ifconfig insmod httpd
+ifdown ifenslave ifplugd ifup inetd ip ipaddr ipcalc ipcrm ipcs iplink iproute iprule iptunnel klogd
+ logger logread losetup lsmod mdev mknod modprobe  nameif nc netstat nmeter nslookup rmmod route
+hwclock mkswap ping ping6 popmaildir pscan rdate readprofile rpm2cpio runlevel rx rpm rtcwake 
+sendmail setarch slattach start-stop-daemon sv svlogd swapon swapoff sysctl syslogd tcpsvd 
+telnet telnetd tftp tftpd traceroute udhcpc udhcpd udpsvd umount uname vconfig wget zcip 
+ 
