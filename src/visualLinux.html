@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+	<title>Visual Linux</title>
+	<meta charset="utf-8">
+	<script src="jquery-1.11.2.min.js"></script>
+	<link rel="stylesheet"  href="StyleObj.css" >
+	<script src="popup.js"></script>
+
+</head>
+
+
+
+<body id="sBody">
+
+	<div id="wrapper">
+		<a href="index.html"><img id="backArrow" src="images/back-arrow.png"></a>
+		<botton class="linuxtitle">Menu</botton>
+		<div id="linuxmain">
+
+			<div id="linux">
+				<button class="com"><a href="JavaScript:newPopupCD();">Change Directory</a></button>
+				<button class="com"><a href="JavaScript:newPopupCP();">Copy</a></button>
+				<button class="com"><a href="JavaScript:newPopupRename();">Rename</a></button>
+				<button class="com"><a href="JavaScript:newPopupCreate();">Create file</a></button>
+				<button class="com"><a href="JavaScript:newPopupMake();">Make Directory</a></button>
+				<button class="com"><a href="JavaScript:newPopupMove();">Move Directory</a></button>
+				<button class="com"><a href="JavaScript:newPopupRemove();">Remove Directory</a></button>
+				<button class="com"><a href="JavaScript:newPopupAccess();">Access file Directory</a></button>
+				<button class="com"><a href="JavaScript:newPopupLS();">List</a></button>
+			</div>
+		
+			<div id="linuxpath">
+				Path:			
+				<section id="linuxdynamicPath">
+					<section class="pathFolder">
+						<img id="firstFolder" src="images/path5.png">
+						<h4 class="home">Home</h4>
+						<img id="imgFolder" src="images/folder.png">
+					</section>
+
+					<section id="newFile">
+	
+					</section>
+				</section>
+			</div>
+
+		</div>
+		
+		<div class="clear"></div>
+
+		<section id="linuxmacros">
+			<h5>Macros</h5>
+			<input type='file' id="openFile" accept='text/plain' onchange='openFile(event)'><br>
+			<button id="ls1btm2" onclick="saveTextAsFile('Tcheckbox')">Save As</button>
+			<input id="inputFileNameToSaveAs"></input>		
+		</section>
+
+		<section id="fileDetails">
+			<h5>File Details</h5>
+			<section id="minRes"><a href="JavaScript:minimize();"><img id="minimize" src="images/resize.png"></a></section>
+
+			<section id="fdS">
+				
+			</section>
+		</section>
+
+		<section id="fileTree">
+			<h5>File Tree</h5>
+			<section id="ftS">
+				<section class="Folder">
+					<img id="pathFolder" src="images/path5.png">
+					<h4 class="pathH">Home</h4>
+					<img id="pathImgFolder" src="images/folder.png">
+				</section>
+				<section id="treeArrow"></section>
+				<section id="treeSubFolder"></section>
+			</section>
+		</section>
+
+		<div class="clear"></div>
+
+		<div id="textCommandLine">
+			<h5 id="tclH">Text Command Line</h5>
+			<a href="JavaScript:moveLeft();"><img id="arrow2" src="images/arrow2.png"></a>
+			<a href="JavaScript:redTPopup();"><img id="undo2" src="images/red.png"></a>
+			<a href="JavaScript:undoTextCommand();"><img id="undo2" src="images/undo.png"></a>
+			<a href="JavaScript:deleteTextCommand();"><img id="undo2" src="images/delete.png"></a>
+			<a href="#"><img id="play2" src="images/play.png"></a>
+			<a href="JavaScript:Treset();"><img id="play2" src="images/reset2.png"></a>
+			<a href="JavaScript:saveTextAsFile('Tcheckbox');"><img id="undo2" src="images/save3.png"></a>
+			<a href="JavaScript:TselectAll();"><img id="play2" src="images/select_all2.png"></a>
+			<a href="JavaScript:TunselectAll();"><img id="play2" src="images/unselect_all2.png"></a>
+			<input id="InputText" class="" type="text" value="" list="TcommandList" name="Command_Text" placeholder="Command Text" onkeydown = "if (event.keyCode == 13) inputText()">
+			<a href="JavaScript:inputText();"><img id="vSubmit" src="images/v.png"></a>
+			<button class="vclB2"><a href="#"> Result System</a></button>
+
+			<section id="tclS">
+				<section id="firstCommandTCL">
+				</secion>
+			</section>
+		</div>
+
+		<div id="visualCommandLine">
+			<h5 id="vclH">Visual Command Line</h5>
+
+				<a href="JavaScript:VunselectAll();"><img id="play" src="images/unselect_all2.png"></a>
+				<a href="JavaScript:VselectAll();"><img id="play" src="images/select_all2.png"></a>
+				<a href="JavaScript:saveTextAsFile('Vcheckbox');"><img id="undo" src="images/save3.png"></a>
+				<a href="JavaScript:Vreset();"><img id="play" src="images/reset2.png"></a>
+				<a href="#"><img id="play" src="images/play.png"></a>
+				<a href="#"><img id="undo" src="images/delete.png"></a>
+				<a href="JavaScript:undoVisualCommand();"><img id="undo" src="images/undo.png"></a>
+				<a href="JavaScript:redVPopup();"><img id="undo" src="images/red.png"></a>
+				<a href="JavaScript:moveRight();"><img id="arrow" src="images/arrow.png"></a>
+				<input id="InputVisual" class="" type="text" value="" list="VcommandList" name="Command_Visual" placeholder="Command Visual" onkeydown = "if (event.keyCode == 13) inputVisual()">
+				<a href="JavaScript:inputVisual();"><img id="vSubmit2" src="images/v.png"></a>
+				<button class="vclB"><a href="#">Result System</a></button>
+			<section id="vclS">
+				<section id="firstCommandVCL">
+				</secion>
+			</section>
+		</div>
+
+
+	</div>
+
+	<datalist id="TcommandList">
+	    <!-- options are filled in the script -->
+	</datalist>
+
+	<datalist id="VcommandList">
+	    <!-- options are filled in the script -->
+	</datalist>
+
+	<script>
+
+	var myTcommands = new Array();
+	myTcommands[0]='mkdir ';
+	myTcommands[1]='cat ';
+	myTcommands[2]='cp ';
+	myTcommands[3]='cd ';
+	myTcommands[4]='mv ';
+	myTcommands[5]='rename ';
+	myTcommands[6]='rm ';
+
+	$(document).ready( function() {
+	    $(myTcommands).each( function(index, item) {
+	        var option = $('<option value="'+item+'"></option>');
+	        $('#TcommandList').append(option);
+	    });
+	});
+
+	var myVcommands = new Array();
+	myVcommands[0]='Make_Dir ';
+	myVcommands[1]='Create_File ';
+	myVcommands[2]='Copy ';
+	myVcommands[3]='Change_Dir ';
+	myVcommands[4]='Move_Dir ';
+	myVcommands[5]='Rename ';
+	myVcommands[6]='Remove ';
+
+	$(document).ready( function() {
+	    $(myVcommands).each( function(index, item) {
+	        var option = $('<option value="'+item+'"></option>');
+	        $('#VcommandList').append(option);
+	    });
+	});
+
+	</script>
+
+
+</body>
+
+</html>
