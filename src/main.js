@@ -1,6 +1,7 @@
 'use strict';
 
 const electron = require('electron');
+const os = require('os');
 // Module to control application life.
 const app = electron.app;
 // Module to create native browser window.
@@ -16,6 +17,15 @@ function createWindow () {
 
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/index.html');
+   
+  var userMeta={};
+  
+  userMeta.username=os.userInfo().username;
+  userMeta.host=os.hostname();
+
+mainWindow.webContents.executeJavaScript('localStorage.setItem("userMeta",\''+JSON.stringify(userMeta)+'\')')
+
+
 
   // Open the DevTools.
   //mainWindow.webContents.openDevTools();
