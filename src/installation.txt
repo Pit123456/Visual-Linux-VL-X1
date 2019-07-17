@@ -15,7 +15,7 @@ sudo npm install -g electron-prebuilt
 // Start App Command
 
 //Navigate to Electron App
-cd Desktop/VL
+go to main source directory i.e. Visual-Linux-VL-X1/src
 
 //Start Electron App
 npm start
