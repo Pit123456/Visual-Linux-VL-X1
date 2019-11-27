@@ -7,7 +7,7 @@
 		var VcommandCounter=0;
 		var TcommandCounter=0;
 		var sizeWindow=1;
-
+     		
 		var Tcounter=0;
 		var Vcounter=0;
 
@@ -28,6 +28,8 @@
 
 		var currentVCommand="";
 		var currentTCommand="";
+		var userMeta=JSON.parse(localStorage.getItem("userMeta"));
+
 
 //------------------Pop-Up------------------------------------//
 
@@ -1524,7 +1526,7 @@
 			// Generic Text Command
 			command = ''+green+''+
 				'<section id="'+TCommand+'">'+
-					'<section class="TuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+					'<section class="TuserName"><h5 class="un">'+userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 					''+parameters+''+
 					'<section id="checkboxS">'+
 						'<input type="checkbox" id="Tcheck" class="Tcheckbox" v-model="checked" value="'+value+'">'+							
@@ -1554,7 +1556,7 @@
 					// Macro Folder
 					var script = ''+green+''+
 					'<section id="'+TCommand+'">'+
-						'<section class="TuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+						'<section class="TuserName"><h5 class="un">'+userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 						'<section class="makeTerminalCommand"><h5 class="un">Macro</h5></section>'+
 						'<section class="makeTfile"><h5 class="un">'+newString+'</h5></section>'+
 						'<a href="JavaScript:openTextScript(1);"><img id="textScriptPlus" src="images/plus.png"></a>'+
@@ -1604,7 +1606,7 @@
 						// Macro Folder
 						var script = ''+green+''+
 						'<section id="'+TCommand+'">'+
-							'<section class="TuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="TuserName"><h5 class="un">'+userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="makeTerminalCommand"><h5 class="un">Macro</h5></section>'+
 							'<section class="makeTfile"><h5 class="un">'+newString+'</h5></section>'+
 							'<a href="JavaScript:openTextScript(1);"><img id="textScriptPlus" src="images/plus.png"></a>'+
@@ -1720,7 +1722,7 @@
 			var command =''+pipe+''+
 				'<section class="'+nestClass+'">'+
 					''+greenBtm+''+
-					'<section class="'+first+'VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">Piter@Smith$</h5></section>'+
+					'<section class="'+first+'VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">'+userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 					'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 					'<section class="'+first+'vCommand">'+
 						'<h5 class="unS">'+res[0]+'</h5>'+
@@ -1766,7 +1768,7 @@
 					var script =''+pipe+''+
 					'<section id="scriptFolder1" class="vclN3">'+
 						''+greenBtm+''+
-						'<section class="fVuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">Piter@Smith$</h5></section>'+
+						'<section class="fVuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 						'<section class="Vcounter"><h5 class="un">M</h5></section>'+
 						'<section class="fvCommand">'+
 							'<h5 class="unS">Macro</h5>'+
@@ -1822,7 +1824,7 @@
 						var script =''+pipe+''+
 						'<section id="scriptFolder1" class="vclN4">'+
 							'<img class="greenSS" id="greenV'+VcommandCounter+'" src="images/greenEmpty.png">'+
-							'<section class="fVuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="fVuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">M</h5></section>'+
 							'<section class="fvCommand">'+
 								'<h5 class="unS">Macro</h5>'+
@@ -2132,7 +2134,7 @@
 
 			var firstC ='<img class="greenS" src="images/greenStart.png">'+
 						'<section class="vclN">'+
-							'<section class="fVuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="fVuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="fvCommand">'+
 								'<h5 class="unS">Create_File</h5>'+
@@ -2152,7 +2154,7 @@
 			var secondC ='<img class="pipe" src="images/linkCommand2.png">'+
 						'<section class="vclN2">'+
 						'<img class="greenSS" id="greenV'+VcommandCounter+'" src="images/greenStart.png">'+
-							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="vCommand">'+
 								'<h5 class="unS">Create_File</h5>'+
@@ -2177,7 +2179,7 @@
 
 			var cat = ''+green+''+
 						'<section id="TCommand">'+
-							'<section class="TuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="TuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="catTerminalCommand"><h5 class="un">cat</h5></section>'+
 							''+TCpParameters+''+
 							''+cell+''+
@@ -2304,7 +2306,7 @@
 
 			var firstC ='<img class="greenS" src="images/greenStart.png">'+
 						'<section class="vclN">'+
-							'<section class="fVuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="fVuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="fvCommand">'+
 								'<h5 class="unS">Make_Dir</h5>'+
@@ -2324,7 +2326,7 @@
 			var secondC ='<img class="pipe" src="images/linkCommand2.png">'+
 						'<section class="vclN2">'+
 							'<img class="greenSS" id="greenV'+VcommandCounter+'" src="images/greenStart.png">'+
-							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="vCommand">'+
 								'<h5 class="unS">Make_Dir</h5>'+
@@ -2350,7 +2352,7 @@
 
 			var mkdir = ''+green+''+
 						'<section id="TCommand">'+
-							'<section class="TuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="TuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="makeTerminalCommand"><h5 class="un">mkdir</h5></section>'+
 							''+TCpParameters+''+
 							''+cell+''+
@@ -2456,7 +2458,7 @@
 
 			var firstD ='<img class="greenS" src="images/greenStart.png">'+
 						'<section class="vclN">'+
-							'<section class="fVuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="fVuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="fvCommand">'+
 								'<h5 class="unS">Change_Dir</h5>'+
@@ -2475,7 +2477,7 @@
 			var secondD ='<img class="pipe" src="images/linkCommand2.png">'+
 						'<section class="vclN2">'+
 							'<img class="greenSS" id="greenV'+VcommandCounter+'" src="images/greenStart.png">'+
-							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="vCommand">'+
 								'<h5 class="unS">Change_Dir</h5>'+
@@ -2500,7 +2502,7 @@
 
 			var chdir = ''+green+''+
 						'<section id="TCommand">'+
-							'<section class="TuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="TuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="cdTerminalCommand"><h5 class="un">cd</h5></section>'+
 							'<section class="cdTfile"><h5 class="un">'+str+'</h5></section>'+
 							'<section id="checkboxS">'+
@@ -2622,7 +2624,7 @@
 
 			var firstD ='<img class="greenS" src="images/greenStart.png">'+
 						'<section class="vclN">'+
-							'<section class="fVuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="fVuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="fvCommand">'+
 								'<h5 class="unS">Rename</h5>'+
@@ -2643,7 +2645,7 @@
 			var secondD ='<img class="pipe" src="images/linkCommand2.png">'+
 						'<section class="vclN2">'+
 							'<img class="greenSS" id="greenV'+VcommandCounter+'" src="images/greenStart.png">'+
-							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="vCommand">'+
 								'<h5 class="unS">Rename</h5>'+
@@ -2670,7 +2672,7 @@
 
 			var rename = ''+green+''+
 						'<section id="TCommand">'+
-							'<section class="TuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="TuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="RenameTerminalCommand"><h5 class="un">rename</h5></section>'+
 							''+TCpParameters+''+
 							''+cells+''+
@@ -2769,7 +2771,7 @@
 
 			var firstD ='<img class="greenS" src="images/greenStart.png">'+
 						'<section class="vclN">'+
-							'<section class="fVuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="fVuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="fvCommand">'+
 								'<h5 class="unS">Remove</h5>'+
@@ -2788,7 +2790,7 @@
 			var secondD ='<img class="pipe" src="images/linkCommand2.png">'+
 						'<section class="vclN2">'+
 							'<img class="greenSS" id="greenV'+VcommandCounter+'" src="images/greenStart.png">'+
-							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="vCommand">'+
 								'<h5 class="unS">Remove</h5>'+
@@ -2813,7 +2815,7 @@
 
 			var remove = ''+green+''+
 						'<section id="TCommand">'+
-							'<section class="TuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="TuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="removeTerminalCommand"><h5 class="un">rm</h5></section>'+
 							'<section class="removeTfile"><h5 class="un">'+str+'</h5></section>'+
 							'<section id="checkboxS">'+
@@ -2938,7 +2940,7 @@
 
 			var firstD ='<img class="greenS" src="images/greenStart.png">'+
 						'<section class="vclN">'+
-							'<section class="fVuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="fVuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="fvCpCommand">'+
 								'<h5 class="unS">Copy</h5>'+
@@ -2959,7 +2961,7 @@
 			var secondD ='<img class="pipe" src="images/linkCommand2.png">'+
 						'<section class="vclN2">'+
 							'<img class="greenSS" id="greenV'+VcommandCounter+'" src="images/greenStart.png">'+
-							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="vCpCommand">'+
 								'<h5 class="unS">Copy</h5>'+
@@ -2986,7 +2988,7 @@
 
 			var copy = ''+green+''+
 						'<section id="TCommand">'+
-							'<section class="TuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="TuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="CPterminalCommand"><h5 class="un">cp</h5></section>'+
 							''+TCpParameters+''+
 							''+cells+''+
@@ -3105,7 +3107,7 @@
 
 			var firstD ='<img class="greenS" src="images/greenStart.png">'+
 						'<section class="vclN">'+
-							'<section class="fVuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="fVuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="fvCpCommand">'+
 								'<h5 class="unS">Copy</h5>'+
@@ -3125,7 +3127,7 @@
 			var secondD ='<img class="pipe" src="images/linkCommand2.png">'+
 						'<section class="vclN2">'+
 							'<img class="greenSS" id="greenV'+VcommandCounter+'" src="images/greenStart.png">'+
-							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="VuserName" id="VuserName'+VcommandCounter+'"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="Vcounter"><h5 class="un">0'+VcommandCounter+'</h5></section>'+
 							'<section class="vCpCommand">'+
 								'<h5 class="unS">Copy</h5>'+
@@ -3151,7 +3153,7 @@
 
 			var copy = ''+green+''+
 						'<section id="TCommand">'+
-							'<section class="TuserName"><h5 class="un">Piter@Smith$</h5></section>'+
+							'<section class="TuserName"><h5 class="un">'+ userMeta.username+'@'+userMeta.host+'$</h5></section>'+
 							'<section class="CPterminalCommand"><h5 class="un">cp</h5></section>'+
 							''+TCpParameters+''+
 							''+cells+''+
